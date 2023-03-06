@@ -1,0 +1,61 @@
+<div class="background-style">
+    <ng-template #content let-modal>
+      <div class="modal-header">
+        <h4 class="modal-title" id="modal-basic-title">Sign Up - Step 1...</h4>
+        <button type="button" class="btn-close" aria-label="Close" (click)="onCloseClicked();modal.dismiss('Cross click')"></button>
+      </div>
+      <div class="modal-body">
+        <form #firstSignup="ngForm">
+          <div class="mb-3">
+            <div class="input-style">
+              <label class="input-style" for="">ID Number:</label> &nbsp; &nbsp; &nbsp; &nbsp; 
+              <input class="input-style" #idNumber="ngModel" type="number" name="idNumber" (keyup)="onIdNumberChange()" required pattern="^\d{9}$"
+                [(ngModel)]="shareDataService.allSignupDetails.idNumber" [ngClass]="{'red-input-validation': idNumber.touched && idNumber.errors?.['required']}">
+            </div>
+            &nbsp; &nbsp;&nbsp; &nbsp;
+            <div class="input-style">
+              <label class="input-style" for="">Email Address:</label> &nbsp; &nbsp; 
+              <input class="input-style" #emailAddress="ngModel" type="email" name="email" (keyup)="onEmailChange()" required  minlength="5" maxlength="20"
+                [(ngModel)]="shareDataService.allSignupDetails.email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" [ngClass]="{'red-input-validation': emailAddress.touched && emailAddress.errors?.['required']}">
+            </div>
+            &nbsp; &nbsp;&nbsp; &nbsp;
+            <div class="input-style">
+              <label class="input-style" >Password: </label>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+              <input class="input-style" #passwordInput="ngModel" name="password" type="password" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[$@$!%?&])[A-Za-z\d$@$!%?&]{8,}$" (change)="onPasswordChange()" required minlength="3"
+                maxlength="15" [(ngModel)]="shareDataService.allSignupDetails.password" [ngClass]="{'red-input-validation': passwordInput.touched && passwordInput.errors?.['required'] || passwordInput.touched && passwordInput.errors?.['pattern']}">
+            </div>
+            &nbsp; &nbsp;&nbsp; &nbsp;
+            <div class="input-style">
+              <label class="input-style" >Confirm Password: </label>&nbsp; 
+              <input class="input-style" #confirmPasswordInput="ngModel" name="confirmPassword" type="password" pattern="{{ shareDataService.allSignupDetails.password }}" (change)="onConfirmPasswordChange()" required minlength="3"
+                maxlength="15" [(ngModel)]="shareDataService.allSignupDetails.confirmPassword" [ngClass]="{'red-input-validation': confirmPasswordInput.touched && confirmPasswordInput.errors?.['required'] || confirmPasswordInput.touched && confirmPasswordInput.errors?.['pattern']}">
+            </div>
+          </div>
+          <span class="ngForm-spans" *ngIf="idNumber.pristine">* Missing ID number<br></span>
+          <span class="ngForm-spans" *ngIf="idNumber.touched && idNumber.errors?.['required'] ">* Missing ID number<br> </span>
+          <span class="ngForm-spans" *ngIf="idNumber.touched && idNumber.errors?.['pattern'] ">* ID number must contain 9 digits<br> </span>
+          <span class="ngForm-spans" *ngIf="emailAddress.pristine">* Missing email address<br></span>
+          <span class="ngForm-spans" *ngIf="emailAddress.touched && emailAddress.errors?.['required'] ">* Missing email address<br> </span>
+          <span class="ngForm-spans" *ngIf="emailAddress.touched && emailAddress.errors?.['pattern'] ">* Email address must contain @ and a domain name <br></span>
+          <span class="ngForm-spans" *ngIf="passwordInput.pristine">* Missing password<br></span>
+          <span class="ngForm-spans" *ngIf="passwordInput.touched && passwordInput.errors?.['required'] ">* Missing password<br> </span>
+          <span class="ngForm-spans" *ngIf="passwordInput.touched && passwordInput.errors?.['pattern'] ">* Password must contain:<br>
+            at least one uppercase letter,<br>
+            at least one lowercase letter,<br>
+            at least one number,<br>
+            at least one special character<br></span>
+            <span class="ngForm-spans" *ngIf="confirmPasswordInput.pristine">* Missing confirm password<br></span>
+            <span class="ngForm-spans" *ngIf="confirmPasswordInput.touched && confirmPasswordInput.errors?.['required'] ">* Missing confirm password<br> </span>
+            <span class="ngForm-spans" *ngIf="confirmPasswordInput.touched && confirmPasswordInput.errors?.['pattern'] ">* Password and confirm password does not match:<br></span>
+
+
+        <br>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" [disabled]="firstSignup.form.invalid" class="btn btn-outline-dark" (click)="onSaveClicked();modal.close('Close click')">
+          <mat-icon title="continue" class="arrow-style">arrow_forward</mat-icon>
+        </button>
+      </div>
+    </ng-template>
+</div>

@@ -1,0 +1,55 @@
+<div class="background-style">
+  <ng-template #content let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title" id="modal-basic-title">Sign Up - Step 2...</h4>
+      <button type="button" class="btn-close" aria-label="Close"
+        (click)="onCloseClicked();modal.dismiss('Cross click')"></button>
+    </div>
+    <div class="modal-body">
+      <form #secondSignup="ngForm">
+        <div class="mb-3">
+          <div class="input-style">
+            <label class="input-style" for="">First Name:</label> &nbsp; 
+            <input class="input-style" #firstNameInput="ngModel" type="text" name="firstName" (keyup)="onFirstNameChange()" required  minlength="3" maxlength="15"
+              [(ngModel)]="allSignupDetails.firstName" pattern="[a-zA-Z][a-zA-Z ]{2,}$"
+              [ngClass]="{'red-input-validation': firstNameInput.touched && firstNameInput.errors?.['required']}">
+          </div>
+          &nbsp; &nbsp;&nbsp; &nbsp;
+          <div class="input-style">
+            <label class="input-style" for="">Last Name:</label> &nbsp;&nbsp;
+            <input class="input-style" #lastNameInput="ngModel" type="text" name="lastname" (keyup)="onLastNameChange()" required  minlength="3" maxlength="15"
+              [(ngModel)]="allSignupDetails.lastName" pattern="[a-zA-Z][a-zA-Z ]{2,}$" [ngClass]="{'red-input-validation': lastNameInput.touched && lastNameInput.errors?.['required']}">
+          </div>
+          &nbsp; &nbsp;&nbsp; &nbsp;
+          <div class="input-style">
+            <label class="input-style" for="">Street:</label> &nbsp; &nbsp;&nbsp;&nbsp;
+            <input class="input-style" #streetInput="ngModel" type="text" name="street" (keyup)="onStreetChange()" required  minlength="3" maxlength="20"
+              [(ngModel)]="allSignupDetails.streetName" pattern="[a-zA-Z][a-zA-Z0-9  \-]{2,}$" [ngClass]="{'red-input-validation': streetInput.touched && streetInput.errors?.['required']}">
+          </div>
+          &nbsp; &nbsp;&nbsp; &nbsp;
+          <div class="input-style">
+            <label class="input-style" for="">City:</label> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <select type="string" #cityInput="ngModel" required name="city" class="input-style" [(ngModel)]="allSignupDetails.cityName"
+               [ngClass]="{'red-input-validation': cityInput.touched && cityInput.pristine}">
+              <option class="input-style" required *ngFor="let city of shareDataService.cities" [ngValue]="city.name">{{city.name}}</option>
+            </select>
+          </div>      
+        </div>
+        <span class="ngForm-spans" *ngIf="firstNameInput.pristine">* Missing first name<br></span>
+          <span class="ngForm-spans" *ngIf="firstNameInput.touched && firstNameInput.errors?.['required'] ">* Missing first name<br> </span>
+          <span class="ngForm-spans" *ngIf="firstNameInput.touched && firstNameInput.errors?.['pattern']">* First name length must be between 3-25 characters & contain only letters <br> </span>
+          <span class="ngForm-spans" *ngIf="lastNameInput.touched && lastNameInput.errors?.['pattern']">* Last name length must be between 3-25 characters & contain only letters <br> </span>
+          <span class="ngForm-spans" *ngIf="streetInput.touched && streetInput.errors?.['pattern']">* Street name length must be between 3-25 characters & contain only letters & numbers <br> </span>
+          <span class="ngForm-spans" *ngIf="lastNameInput.pristine">* Missing last name<br></span>
+          <span class="ngForm-spans" *ngIf="lastNameInput.touched && lastNameInput.errors?.['required'] ">* Missing last name<br> </span>
+          <span class="ngForm-spans" *ngIf="streetInput.pristine">* Missing street name<br></span>
+          <span class="ngForm-spans" *ngIf="streetInput.touched && streetInput.errors?.['required'] ">* Missing street name<br> </span>
+          <span class="ngForm-spans" *ngIf="cityInput.pristine">* Missing city selection<br></span><br> 
+      </form>
+    </div>
+    <div class="modal-footer">
+      <button type="button" [disabled]="secondSignup.form.invalid" class="btn btn-outline-dark"
+        (click)="onSaveClicked();modal.close('Close click')">Finish</button>
+    </div>
+  </ng-template>
+</div>

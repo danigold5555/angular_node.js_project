@@ -1,0 +1,13 @@
+<nav ngbNav #nav="ngbNav" [(activeId)]="shareDataService.openTab" class="nav-tabs" [ngClass]="{'align-with-side-bar': shareDataService.isSideBarOpen}">
+  <div *ngFor="let category of shareDataService.categories">
+    <ng-container>
+      <a class="category-style" [ngbNavItem]="category.id" ngbNavLink id={{category.id}}
+        (click)="onCategoryClick(category.id)">{{category.name}}</a>
+    </ng-container>
+  </div>
+</nav>
+<div [ngbNavOutlet]="nav" class="mt-2"></div>
+
+<app-search></app-search>
+<app-login-dialog *ngIf="shareDataService.loggedInCustomerId != 999999999 && shareDataService.loggedInCustomerId != 0"></app-login-dialog>
+<app-products-container class="container-style" *ngIf="loadProductsContainerComponent"></app-products-container>

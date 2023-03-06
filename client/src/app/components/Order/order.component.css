@@ -1,0 +1,142 @@
+.background-style {
+    background: linear-gradient(rgba(44, 34, 34, 0.7), rgba(40, 35, 35, 0.9)), url("../Login/image/supermarket.jpg");
+    background-repeat: round;
+    background-size: cover;
+    min-height: 100vh;
+    padding-bottom: 30px;
+}
+
+.modal-order > .modal-dialog {
+    max-width: 96%;
+    margin: 30px;
+    height: 95%;
+    font-family: cursive;
+    box-shadow: whitesmoke 0px 0px 9px 9px;
+}
+
+h4 {
+    margin-left: 15px;
+    margin-bottom: 35px;
+}
+
+.order-product-name {
+    font-size: 16px;
+    width: 220px;
+    letter-spacing: 2px;
+    margin-bottom: 7px;
+    font-family: cursive;
+    font-weight: 600;
+}
+
+.order-product-image {
+    height: 111px;
+    border-radius: 11px;
+    box-shadow: whitesmoke 0px 0px 10px 0px;
+}
+
+.order-product-quantity-price {
+    font-size: 15px;
+    margin-top: 7px;
+    margin-left: 0px;
+    margin-bottom: 3px;
+    font-family: cursive;
+    letter-spacing: 1px;
+}
+
+.order-product-position {
+    margin-top: 0px;
+    margin-bottom: 21px;
+    padding-top: 11px;
+    margin-left: 10px;
+    outline-style: dashed;
+    width: 257px;
+    padding-left: 7px;
+}
+
+
+.blue-frame {
+    box-shadow: blue 0px 4px 27px;
+}
+
+.search-style {
+    font-size: 16px;
+    float: right;
+    margin-right: 1%;
+    width: 258px;
+    margin-top: -61px;
+    outline-style: double;
+    height: 28px;
+    padding-left: 9px;
+    border-radius: 11px;
+}
+
+.fields-style {
+    font-size: 16px;
+    width: 258px;
+    margin-top: 2px;
+    margin-left: 9px;
+    height: 28px;
+    padding-left: 9px;
+    border-radius: 11px;
+}
+
+.order-details {
+    height: 384px;
+    width: 482px;
+    margin-right: 13px;
+    outline-style: dashed;
+    float: right;
+}
+
+.field {
+    margin-top: 10px;
+    margin-bottom: 17px;
+}
+
+.align-form {
+    text-align: center;
+    justify-content: center;
+    padding-top: 10px;
+}
+
+.ngForm-spans {
+    font-size: 14px;
+    color: red;
+}
+
+.red-input-validation {
+    border-radius: 20px;
+    padding-left: 7px;
+    font-family: cursive;
+    border-color: red;
+    box-shadow: red 0px 0px 15px;
+}
+
+.red-input-date-validation {
+    border-radius: 20px;
+    padding-left: 7px;
+    font-family: cursive;
+    border-color: red;
+    box-shadow: red 0px 0px 15px;   
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0; 
+}
+
+.finish-enabled{
+    box-shadow: black 0px 0px 10px 4px;
+    color: black;
+    font-weight: 700;
+}
+
+.align-footer{
+    justify-content: center;
+}
+
+.modal-content {
+    background-color: beige;
+}
+

@@ -1,0 +1,87 @@
+.header {
+    background: linear-gradient(rgb(18, 15, 15,.1), rgba(255, 255, 255,.1)), url("./images/darkSupermarket1.jpg");
+    background-position: 51% 34%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 247px;
+}
+
+.welcome {
+    color: floralwhite;
+    letter-spacing: 2px;
+    text-shadow: 0px 5px 15px rosybrown;
+    font-family: cursive;
+    margin-left: 13px;
+    margin-top: 8px;
+    float: left;
+}
+
+h1 {
+    font-weight: 600;
+}
+
+h2 { 
+    font-weight: 600;
+}
+
+.login-icon {
+    display: inline-block;
+    position: absolute;
+    right: 99px;
+    top: 20px;
+    font-size: 24px;
+    transform: scale(2);
+    color: initial;
+    cursor: pointer;
+    border-radius: 24px;
+    box-shadow: black 0px 0px 7px 5px;
+}
+
+.logout-icon {
+    display: inline-block;
+    position: absolute;
+    right: 99px;
+    top: 20px;
+    font-size: 24px;
+    transform: scale(2);
+    color: initial;
+    cursor: pointer;
+    border-radius: 24px;
+    box-shadow: black 0px 0px 7px 5px;
+}
+
+.info-icon {
+    display: inline-block;
+    position: absolute;
+    right: 28px;
+    top: 20px;
+    font-size: 24px;
+    transform: scale(2);
+    color: initial;
+    cursor: pointer;
+    border-radius: 24px;
+    box-shadow: black 0px 0px 7px 5px;   
+}
+
+.logo-style {
+    border-radius: 81px;
+    height: 52px;
+    outline-style: auto;
+    left: 104%;
+    top: -51px;
+    position: relative;
+}
+
+.counters-style{
+    margin-top: -41px;
+    margin-left: 2px;
+    font-size: 15px;
+    color: floralwhite;
+    font-weight: bolder;
+}
+
+.right-position {
+    right: 95px; 
+}
+
+    

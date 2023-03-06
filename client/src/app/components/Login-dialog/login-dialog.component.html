@@ -1,0 +1,15 @@
+<div>
+    <ng-template #content let-modal>
+        <form class="form-login-style" #loginMessage="ngForm">
+        <div class="modal-header">
+            <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+        </div>
+        <div class="modal-body">
+            <span class="message-style" *ngIf="!shareDataService.loggedInCustomerDetails.isActiveCart && !shareDataService.loggedInCustomerDetails.orderDate">Welcome to your first order!</span>    
+            <span class="message-style" *ngIf="shareDataService.loggedInCustomerDetails.isActiveCart == 1 && !shareDataService.loggedInCustomerDetails.orderDate">You have an active cart since:<br><br> {{shareDataService.loggedInCustomerDetails.cartCreationDate}}</span>          
+            <span class="message-style" *ngIf="shareDataService.loggedInCustomerDetails.isActiveCart == 0 && shareDataService.loggedInCustomerDetails.orderDate">Your last order was on the: {{shareDataService.loggedInCustomerDetails.orderDate}} <br><br>
+            Total price was: {{shareDataService.loggedInCustomerDetails.finalOrderPrice}}₪</span>          
+        </div>
+    </form>
+    </ng-template>
+</div>

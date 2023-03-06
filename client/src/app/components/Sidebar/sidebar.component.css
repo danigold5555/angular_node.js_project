@@ -1,0 +1,163 @@
+
+  .mat-drawer-container{
+    width: 245px;
+    height: 1000vh;
+    background-color: #000000d4 !important;
+    box-shadow: black 0px 0px 16px 5px;
+    position: absolute !important;
+    visibility: hidden !important;
+  }
+
+  .mat-drawer-inner-container {
+    width: 245px;
+    height: 152vh; 
+  }
+
+
+  .mat-drawer{
+    width: 251px;
+    text-align: center;
+    background-color: transparent;
+    color: floralwhite;
+    font-size: larger;
+    font-weight: 400;
+    font-family: system-ui;
+    letter-spacing: 3px;
+    margin-left: -6px;
+  }
+
+  .open-button {
+    position: absolute;
+    top: 204px;
+    left: 17px;
+    border-radius: 13px;
+    width: 203px;
+    font-weight: 700;
+    box-shadow: bisque 0px 0px 10px 8px;
+  }
+
+  .visible {
+    visibility: visible !important;
+  }
+
+  .hidden {
+    visibility: hidden !important;
+  }
+
+  .label-manage{
+    color: floralwhite;
+    font-size: larger;
+    font-family: system-ui;
+    letter-spacing: 3px;
+    margin-left: 26px;
+    position: absolute;
+    top: 253px;
+    z-index: 2;
+  }
+
+  .add-icon {
+    transform: scale(2);
+    color: white;
+    cursor: pointer;
+    position: absolute;
+    right: 13px;
+    top: 55px;
+  }
+
+  .add-details-headers{
+    color: floralwhite;
+    font-size: 14px;
+    font-family: cursive;
+    letter-spacing: 3px;
+    top: 110px;
+    margin-left: 56px;
+    position: absolute;
+    z-index: 2;
+  }
+
+  .add-inputs {
+    background-color: transparent;
+    width: 212px;
+    padding-left: 8px;
+    letter-spacing: 1px;
+    margin-top: 10px;
+    border-radius: 16px;
+    margin-bottom: 14px;
+    color: cornsilk;
+    margin-left: -40px;
+    box-shadow: white 0px 0pc 4px 3px;
+  }
+
+  .save-button{
+    width: 134px;
+    border-radius: 15px;
+    margin-top: 261%;
+    margin-left: 50px;
+    font-family: cursive;
+    font-weight: 600;
+    box-shadow: white 0px 0px 10px 3px;
+  }
+
+  .product-image {
+    height: 126px;
+    position: absolute;
+    right: 8px;
+    width: 231px;
+    top: 104%;
+    border-radius: 19px;
+  }
+
+  .select{
+    background-color: black;
+  }
+
+  .red-input-validation {
+    border-radius: 20px;
+    padding-left: 7px;
+    font-family: 'Original Surfer', cursive;
+    border-color: red;
+    box-shadow: red 0px 0px 15px;
+}
+
+.cart-total-price{
+  margin-top: 16%;
+  font-size: 22px;
+  color: whitesmoke;
+  margin-left: 5px;
+  font-weight: 700;
+}
+
+.cart-total-quantity{
+  margin-top: 30%;
+  margin-bottom: -8%;
+  font-size: 22px;
+  color: whitesmoke;
+  margin-left: 5px;
+  font-weight: 400;
+}
+
+.delete-icon {
+  font-size: 27px;
+  float: right;
+  margin-right: 5px;
+  margin-top: -45px;
+  color: white;
+  cursor: pointer;
+}
+
+.order-button{
+  width: 134px;
+  border-radius: 15px;
+  margin-top: 45px;
+  font-family: cursive;
+  font-weight: 600;
+  box-shadow: white 0px 0px 10px 3px; 
+}
+
+
+
+
+
+
+
+  

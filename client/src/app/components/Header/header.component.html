@@ -1,0 +1,17 @@
+<div class="header">
+<div class="welcome">
+    <div>
+        <h1>Hello {{shareDataService.loggedInCustomerDetails.firstName}}!</h1>
+    </div>
+    <h2>Welcome to Shopping Online!</h2>
+    <div><img [src]="siteLogo" class="logo-style" alt="Me"></div>
+    <h5 class="welcome counters-style">Available products: {{shareDataService.serverProductsQuantity}} &nbsp;&nbsp;
+        Submitted orders in store: {{shareDataService.serverOrdersQuantity}}</h5>
+</div>
+<mat-icon *ngIf="shareDataService.loggedInCustomerId != 999999999" class="info-icon" title="About"
+    (click)="onAboutClick()">info</mat-icon>
+<mat-icon class="login-icon" *ngIf="shareDataService.loggedInCustomerId == 0" title="Login \ Sign Up"
+    (click)="onLoginClick()">account_circle</mat-icon>
+<mat-icon class="logout-icon" *ngIf="shareDataService.loggedInCustomerId != 0" title="Logout" (click)="onLogoutClick()">
+    logout</mat-icon>
+</div>

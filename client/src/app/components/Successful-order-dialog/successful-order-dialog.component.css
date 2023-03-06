@@ -1,0 +1,43 @@
+.background-order-success {
+    background: linear-gradient(rgba(255, 255, 255, .7), rgba(255, 255, 255, .3)), url("../Login/image/supermarket.jpg") !important;
+    background-size:cover !important;
+    background-repeat: no-repeat !important;
+    min-height: 100vh;
+    padding-top: 1px;
+
+  }
+
+  .align-body{
+    display: flex;
+    justify-content: center;
+  }
+
+
+.truck-img {
+    height: 100px; 
+    margin-left: 20px;
+    padding-bottom: 39px;
+}
+
+.success-dialog > .modal-dialog {
+    font-family: cursive;
+    box-shadow: black 0px 0px 9px 7px;
+    text-align: center;
+    margin-top: 2%;
+}
+
+.align-footer{
+    justify-content: space-evenly;
+
+}
+
+.receipt-button{
+    border-radius: 14px;
+    background-color: cornsilk;
+    cursor: pointer;
+    letter-spacing: 1px;
+}
+
+.receipt-button:hover {
+    box-shadow: black 0px 0px 12px 5px;
+}

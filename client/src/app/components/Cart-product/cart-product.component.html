@@ -1,0 +1,8 @@
+<div class="cart-product-position">
+<mat-icon class="remove-product-icon" title="Remove product from cart" (click)="onDeleteCartItemButtonClicked()">close</mat-icon>
+<div class="cart-product-name">{{product.name}}</div>
+<img class="cart-product-image" src="{{product.image}}" alt="cart product">
+<div class="cart-product-quantity-price">Quantity: {{product.quantity}}</div>
+<div class="cart-product-quantity-price">Price: {{product.price}} ₪</div>
+<div class="cart-product-quantity-price">Total Price: {{product.quantity * product.price}} ₪</div>
+</div>

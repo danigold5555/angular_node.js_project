@@ -1,0 +1,18 @@
+<div class="background-order-success">
+    <ng-template #content let-modal>
+        <form #success="ngForm">
+            <div class="modal-body">
+                <div class="align-body">
+                    <h1>Your order is on its way...</h1>
+                    <img class="truck-img" [src]="truckImage" alt="truck">
+                </div>
+            </div>
+            <div class="modal-footer align-footer">
+                <button type="button" class="receipt-button" aria-label="Close"
+                (click)="onConfirmClicked();modal.dismiss('Cross click')">Back to Homepage</button>
+                <button type="button" class="receipt-button" aria-label="Close"
+                    (click)="onDownloadReceiptClicked()">Download Your Receipt</button>
+            </div>
+        </form>
+    </ng-template>
+</div>

@@ -1,0 +1,14 @@
+.message-style {
+    font-size: 20px;
+    font-family: monospace;
+}
+
+.form-login-style {
+    outline-style: auto;
+    box-shadow: white 0px 0px 10px 10px;
+    top: 30px;
+}
+
+.modal-backdrop.fade {
+    opacity: 0.8;
+}

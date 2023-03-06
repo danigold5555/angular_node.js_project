@@ -1,0 +1,56 @@
+.about-page-style {
+    background: linear-gradient(rgba(44, 34, 34, 0.7), rgba(40, 35, 35, 0.9)), url("../Login/image/supermarket.jpg");
+    min-height: 100vh;
+    padding-top: 1px;
+    text-align: center;
+    background-repeat: round;
+  }
+
+
+h3 {
+    font-size: 30px;
+    text-shadow: black  0px 0px 2px;
+    margin-top: 2%;
+    color: gold;
+    font-family: 'Spectral SC';
+    font-weight: 800;
+}
+
+label {
+    margin-top: 17px;
+    margin-bottom: 4px;
+    font-size: 25px;
+    color: cornsilk;
+    text-shadow: black 0px 0px 1px;
+    font-family: cursive;
+}
+
+.image-about {
+    border-radius: 230px;
+    height: 230px;
+    position: absolute;
+    left: 20px;
+    margin-top: 21px;
+    box-shadow: white 0px 0px 10px 7px;
+}
+
+.return-icon{
+    color: white;
+    position: absolute;
+    transform: scale(3);
+    bottom: 46px;
+    left: 64px;  
+    cursor: pointer;  
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+
+.return-icon:hover {
+    box-shadow: white 0px 0px 12px 5px;
+}
+
+
+
+
+

@@ -1,0 +1,8 @@
+<div>
+    <mat-form-field class="example-form-field" appearance="fill" [ngClass]="{'align-with-side-bar': shareDataService.isSideBarOpen}">
+        <mat-label class="label-text" [ngClass]="{'align-with-side-bar-label': shareDataService.isSideBarOpen}">Search For a Product </mat-label>
+        <input class="input-text" [ngClass]="{'align-with-side-bar-text': shareDataService.isSideBarOpen}" matInput type="text" maxlength="15" [(ngModel)]="shareDataService.searchValue">
+      </mat-form-field>
+      <mat-icon class="search-style" [ngClass]="{'align-with-side-bar-icon': shareDataService.isSideBarOpen}" title="Click for searching..." (click)="onSearchClick()">search</mat-icon>
+</div>
+

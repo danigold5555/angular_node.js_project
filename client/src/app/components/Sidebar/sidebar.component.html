@@ -1,0 +1,73 @@
+<button class="open-button"
+    [ngClass]="{'hidden': shareDataService.loggedInCustomerId == 999999999 || shareDataService.loggedInCustomerId == 0}"
+    n mat-button (click)="onSideBarClicked();sidenav.toggle()">{{shareDataService.cartAction}} Cart</button>
+<div>
+    <label *ngIf="shareDataService.loggedInCustomerId == 999999999" class="label-manage">Manage Products</label>
+    <mat-sidenav-container fixedInViewport="true" [ngClass]="{'visible': shareDataService.isSideBarOpen}">
+        <mat-sidenav #sidenav mode="side">
+            Your Cart
+            <div *ngIf="shareDataService.loggedInCustomerId != 999999999 && shareDataService.loggedInCustomerId != 0">
+                <div>
+                    <mat-icon *ngIf="shareDataService.customerCartProducts.length > 0" class="delete-icon"
+                        (click)="onCustomerClearCartClick()" title="Clear Cart">delete</mat-icon>
+                </div>
+                <div *ngIf="shareDataService.isSideBarOpen">
+                    <div *ngFor="let product of shareDataService.customerCartProducts">
+                        <app-cart-product [product]="product"
+                            (deleteButtonClicked)="onDeleteCartItemButtonClicked($event)">
+                        </app-cart-product>
+                    </div>
+                    <div class="cart-total-quantity" *ngIf="shareDataService.customerCartProducts.length>0">
+                        # Products: {{shareDataService.totalCartProductsQuantity}}
+                    </div>
+                    <div class="cart-total-price">
+                        Cart Total Price: {{shareDataService.totalCartPrice}}₪
+                    </div>
+                    <button [disabled]="shareDataService.customerCartProducts.length == 0" class="order-button"
+                        (click)="onCustomerOrderButtonClicked()">Order</button>
+                </div>
+            </div>
+        </mat-sidenav>
+        <mat-sidenav-content>
+            <div *ngIf="shareDataService.loggedInCustomerId == 999999999">
+                <mat-icon (click)="onAdminAddProductClick()" title="Add new product" class="add-icon">add</mat-icon>
+                <div class="add-details-headers" *ngIf="shareDataService.addButtonClicked">
+                    Product Name:
+                    <br>
+                    <input [(ngModel)]="shareDataService.adminProductDetails.name"
+                        (keyup)="checkFilledInputsValidations()" class="add-inputs" type="text" maxlength="20"
+                        [ngClass]="{'red-input-validation': isNameNotValid}">
+                    <br>
+                    Product ID:
+                    <br>
+                    <input [(ngModel)]="shareDataService.adminProductDetails.id" [readonly]="true" class="add-inputs"
+                        type="text" (keyup)="checkFilledInputsValidations()" maxlength="3">
+                    Product Price (₪):
+                    <br>
+                    <input [(ngModel)]="shareDataService.adminProductDetails.price" class="add-inputs" type="text"
+                        (keyup)="checkFilledInputsValidations()" maxlength="3"
+                        [ngClass]="{'red-input-validation': isPriceNotValid}">
+                    Image:
+                    <br>
+                    <input [(ngModel)]="shareDataService.adminProductDetails.image" title="Insert image link"
+                        (keyup)="checkFilledInputsValidations()" class="add-inputs" type="text"
+                        [ngClass]="{'red-input-validation': isImageNotValid}">
+                    Category:
+                    <select [(ngModel)]="shareDataService.adminProductDetails.categoryId"
+                        (change)="onAdminCategorySelect($event.target['value'])" class="add-inputs select">
+                        <option *ngFor="let category of shareDataService.categories" value={{category.id}}>
+                            {{category.name}}
+                        </option>
+                    </select>
+                    <br>
+                    <img class="product-image" [src]="shareDataService.adminProductDetails.image" alt="Product Image">
+                </div>
+                <div>
+                    <button *ngIf="shareDataService.addButtonClicked"
+                        [disabled]="shareDataService.isSaveChangesButtonDisabled" class="save-button"
+                        (click)="onSaveChangesButtonClicked()">Save Changes</button>
+                </div>
+            </div>
+        </mat-sidenav-content>
+    </mat-sidenav-container>
+</div>

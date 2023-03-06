@@ -1,0 +1,16 @@
+.nav {
+    letter-spacing: 2px;
+    font-family: 'Spectral SC', serif ;  
+    background-color: beige; 
+}
+
+.category-style {
+    color: blue;
+    font-weight: 900;
+    letter-spacing: 2px;
+    border-right-style: groove;
+}
+
+.align-with-side-bar {
+    margin-left: 245px;
+}

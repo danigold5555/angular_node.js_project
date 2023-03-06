@@ -1,0 +1,31 @@
+<div class="container" [ngClass]="{'align-with-side-bar': shareDataService.isSideBarOpen}">
+  <div class="row">
+    <div class="col-md-4 col-lg-4" *ngFor="let product of shareDataService.presentedProducts">
+      <mat-icon (click)="onEditClick(product.id, product.name, product.image, product.price, product.categoryId)"
+        *ngIf="shareDataService.loggedInCustomerId == 999999999" class="edit-icon">edit</mat-icon>
+      <mat-card class="example-card" id={{product.id}}>
+        <mat-card-header>
+          <mat-card-title>{{product.name}}</mat-card-title>
+        </mat-card-header>
+        <img mat-card-image src="{{product.image}}" alt="Photo of a product">
+        <mat-card-content>
+          <p class="price-style">Price: {{product.price}} ₪</p>
+        </mat-card-content>
+        <mat-card-actions
+          *ngIf="shareDataService.loggedInCustomerId != 999999999 && shareDataService.loggedInCustomerId != 0 && shareDataService.isSideBarOpen == true"
+          class="buttons-style">
+          <button (click)="onDecreaseUnitsButtonClicked(product)" title="decrease product units for your cart"
+            class="button-decrease" [disabled]="product.isProductInCart" mat-button>-</button>
+          <label class="counter">
+            {{product.quantity}}
+          </label>
+          <button (click)="onIncreaseUnitsButtonClicked(product)" title="increase product units for your cart"
+            class="button-increase" [disabled]="product.isProductInCart" mat-button>+</button>
+          <button (click)="onAddProductToCartClick(product)" [disabled]="product.isProductInCart" class="button-add">Add to Cart</button>
+          <mat-card-content>
+          </mat-card-content>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+  </div>
+</div>

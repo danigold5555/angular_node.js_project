@@ -1,0 +1,84 @@
+.btn {
+    color: blue;
+    font-weight: bolder;
+    border: none;
+    font-size: large;
+}
+
+.background-style {
+    background: linear-gradient(rgba(44, 34, 34, 0.7), rgba(40, 35, 35, 0.9)), url("../Login/image/supermarket.jpg");
+    background-repeat: round;
+    background-size: cover;
+    min-height: 100vh;
+    padding-bottom: 30px;
+}
+
+.position {
+    top: 10px;
+}
+
+.modal-content {
+    border-width: 2px;
+    border-color: black;
+    box-shadow: black 0px 0px 7px 4px;
+    background-color: cornsilk;
+}
+
+
+
+
+
+
+.input-style {
+    border-radius: 20px;
+    padding-left: 7px;
+    font-family: monospace;
+    font-weight: 900;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0; 
+}
+
+.red-input-validation {
+    border-radius: 20px;
+    padding-left: 7px;
+    font-family: 'Original Surfer', cursive;
+    border-color: red;
+    box-shadow: red 0px 0px 15px;
+}
+
+.modal-title {
+    font-family: 'Montserrat Alternates', sans-serif;
+}
+
+.register-label{
+    font-size: 15px;
+    font-family: system-ui;
+    color: black;   
+    margin-top: 15px;
+}
+
+.register-link{
+    color: blue !important;
+
+}
+
+.register-link:hover {
+    cursor: pointer;
+}
+
+.ngForm-spans{
+    font-size: 14px;
+    color: red;
+}
+
+h4 {
+    font-weight: 600;
+}
+
+.arrow-style {
+    transform: scale(2);
+    font-size: 20px;   
+}

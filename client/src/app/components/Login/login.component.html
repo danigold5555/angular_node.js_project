@@ -1,0 +1,40 @@
+<div class="background-style">
+    <ng-template #content let-modal>
+      <div class="modal-header">
+        <h4 class="modal-title" id="modal-basic-title">Please Login!</h4>
+        <button type="button" class="btn-close" aria-label="Close" (click)="onCloseClicked();modal.dismiss('Cross click')"></button>
+      </div>
+      <div class="modal-body">
+        <form #loginForm="ngForm">
+          <div class="mb-3">
+            <div class="input-style">
+              <label class="input-style" for="">ID Number:</label> &nbsp;
+              <input class="input-style" maxlength="9" #idNumber="ngModel" type="number" name="idNumber" (keyup)="onIdNumberChange()" required pattern="^\d{9}$"
+              [(ngModel)]="login.idNumber" [ngClass]="{'red-input-validation': idNumber.touched && idNumber.errors?.['required']}">
+            </div>
+            &nbsp; &nbsp;&nbsp; &nbsp;
+            <div class="input-style">
+              <label class="input-style" >Password: </label>&nbsp; &nbsp; 
+              <input class="input-style" #passwordInput="ngModel" name="password" type="password" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[$@$!%?&])[A-Za-z\d$@$!%?&]{8,}$" (change)="onPasswordChange()" required minlength="3"
+                maxlength="10" [(ngModel)]="login.password" [ngClass]="{'red-input-validation': passwordInput.touched && passwordInput.errors?.['required'] || passwordInput.touched && passwordInput.errors?.['pattern']}">
+            </div>
+            <div class="register-label">Haven't signed up yet? Please <span class="register-link" (click)="onSignupClicked();modal.close('Close click')">sign up!</span></div>
+          </div>
+          <span class="ngForm-spans" *ngIf="idNumber.pristine">* Missing ID number<br></span>
+          <span class="ngForm-spans" *ngIf="idNumber.touched && idNumber.errors?.['required'] ">* Missing ID number<br> </span>
+          <span class="ngForm-spans" *ngIf="idNumber.touched && idNumber.errors?.['pattern'] ">* ID number must contain 9 digits<br> </span>
+          <span class="ngForm-spans" *ngIf="passwordInput.pristine">* Missing password<br></span>
+          <span class="ngForm-spans" *ngIf="passwordInput.touched && passwordInput.errors?.['required'] ">* Missing password<br> </span>
+          <span class="ngForm-spans" *ngIf="passwordInput.touched && passwordInput.errors?.['pattern'] ">* Password must contain:<br>
+             at least one uppercase letter,<br>
+            at least one lowercase letter,<br>
+            at least one number,<br>
+            at least one special character<br></span>
+        <br>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" [disabled]="loginForm.form.invalid" class="btn btn-outline-dark" (click)="onSaveClicked();modal.close('Close click')">Save</button>
+      </div>
+    </ng-template>
+</div>

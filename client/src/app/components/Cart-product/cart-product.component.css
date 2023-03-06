@@ -1,0 +1,37 @@
+.remove-product-icon {
+    font-size: 27px;
+    float: left;
+    margin-top: -11px;
+    color: white;
+    cursor: pointer;
+}
+
+.cart-product-name{
+    font-size: 18px;
+    width: 220px;
+    letter-spacing: 2px;
+    margin-bottom: 7px;
+    font-family: cursive;
+    font-weight: 600;
+}
+
+.cart-product-image{
+    height: 111px;
+    border-radius: 11px;
+    box-shadow: whitesmoke 0px 0px 10px 0px;
+}
+
+.cart-product-quantity-price{
+    font-size: 15px;
+    margin-top: 7px;
+    margin-left: 0px;
+    margin-bottom: 3px;
+    font-family: cursive;
+    letter-spacing: 1px;
+}
+
+.cart-product-position{
+    margin-top: 41px;
+    padding-top: 11px;
+    margin-left: 10px;
+}

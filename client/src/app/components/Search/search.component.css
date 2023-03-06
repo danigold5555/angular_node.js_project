@@ -1,0 +1,64 @@
+.example-form-field {
+    font-size: 13px;
+    width: 232px;
+    margin-top: -57px;
+    right: 61px;
+    display: inline-block;
+    position: absolute;
+}
+
+.label-text {
+font-size: 14px;  
+}
+
+
+.input-text {
+  font-size:medium;
+  letter-spacing: 2px;
+  padding-top: 3px;
+}
+
+.search-style {
+    font-size: 41px;
+    width: 43px;
+    height: 38px;
+    margin-top: -48px;
+    right: 17px;
+    display: inline-block;
+    position: absolute;
+    cursor: pointer;
+}
+
+.red-input-validation
+{
+    box-shadow: red 0px 6px 0px;
+}
+
+.align-with-side-bar {
+    top: 235px;
+    box-shadow: black 0px 0px 10px 0px;
+    outline-style: double;
+    border-radius: 36px;
+    font-size: 8px;
+    background-color: beige;
+    height: 52px;
+    width: 239px;
+}
+
+.align-with-side-bar-icon {
+    top: 238px;
+    right: 12px;
+    font-weight: bolder; 
+}
+
+.align-with-side-bar-label{
+    font-size: 15px;
+    font-weight: 900;
+    padding-left: 9px;
+}
+
+.align-with-side-bar-text{
+    margin-top: 10px;
+    padding-left: 6px;
+}
+
