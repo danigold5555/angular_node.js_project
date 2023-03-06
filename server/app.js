@@ -1,0 +1,23 @@
+const express = require("express");
+const cors = require('cors');
+const categoriesController = require("./controllers/categories-controller");
+const productsController = require("./controllers/products-controller");
+const cartsController = require("./controllers/carts-controller");
+const cartItemsController = require("./controllers/carts-items-controller");
+const ordersController = require("./controllers/orders-controller");
+const customersController = require("./controllers/customers-controller");
+const loginFilter = require("./filters/login-filter");
+const errorHandler = require("./errors/error-handler");
+const server = express();
+
+server.use(cors({ origin: "http://localhost:4200"}));
+server.use(loginFilter());
+server.use(express.json());
+server.use("/categories", categoriesController);
+server.use("/products", productsController);
+server.use("/carts", cartsController);
+server.use("/cart-items", cartItemsController);
+server.use("/orders", ordersController);
+server.use("/customers", customersController);
+server.use(errorHandler);
+server.listen(3001, () => console.log("Listening on http://localhost:3001"));
